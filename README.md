@@ -6,12 +6,11 @@
 
 This website project, including its source code, custom layout, structure, styling, animations, written content, design system, user interface, and custom implementation, is owned by **Medios Accesible / James Andrew Boyden**.
 
-No part of this project may be copied, reused, modified, redistributed, resold, republished, uploaded, or used to create another website without prior written permission from Medios Accesible.
-**For sales contact us at mediosaccesibles@gmail.com**
+No part of this project may be copied, reused, modified, redistributed, resold, republished, uploaded, or used to create another website without prior written permission from **Medios Accesible / James Andrew Boyden**.
 
 ## Source Code Ownership
 
-All custom HTML, CSS, JavaScript, layout structure, responsive design work, navigation structure, visual styling, and custom website implementation in this repository are proprietary property of **Medios Accesible**.
+All custom HTML, CSS, JavaScript, layout structure, responsive design work, navigation structure, visual styling, and custom website implementation in this repository are proprietary property of **Medios Accesible / James Andrew Boyden**.
 
 This code is provided only for the approved **Elite House Smoke Shop** and may not be reused, sublicensed, transferred, or distributed without following buyout clause.
 
@@ -19,7 +18,7 @@ This code is provided only for the approved **Elite House Smoke Shop** and may n
 
 Images, product photos, brand logos, trademarks, product names, embedded services, fonts, icons, and any other materials used or referenced in this project remain the property of **Elite House Smoke Shop**
 
-Medios Accesible does not claim ownership over third-party images, product branding, trademarks, or external assets unless specifically created by Medios Accesible.
+**Medios Accesible / James BAndrew Boyde** does not claim ownership over third-party images, product branding, trademarks, or external assets unless specifically created by **Medios Accesible / James Andrew Boyden**.
 
 ## Client Usage
 
@@ -33,7 +32,7 @@ Unauthorized copying, cloning, resale, redistribution, or reuse of this websiteâ
 
 ## Contact
 
-For licensing, permission requests, or copyright concerns, contact Medios Accesible.
+For licensing, purchasing requests, or copyright concerns, contact **Medios Accesible / James Andrew Boyden at mediosaccesibles@gmail.com or call (787)907-4302**.
 ```
 
 
