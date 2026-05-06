@@ -7,6 +7,7 @@
 This website project, including its source code, custom layout, structure, styling, animations, written content, design system, user interface, and custom implementation, is owned by **Medios Accesible/James-Andrew-Boyden**.
 
 No part of this project may be copied, reused, modified, redistributed, resold, republished, uploaded, or used to create another website without prior written permission from Medios Accesible.
+**Contact** **us** **at** **mediosaccesibles@gmail.com**
 
 ## Source Code Ownership
 
