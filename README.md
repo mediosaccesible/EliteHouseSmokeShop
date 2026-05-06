@@ -15,11 +15,11 @@ No part of this project may be copied, reused, modified, redistributed, resold, 
 
 All custom HTML, CSS, JavaScript, layout structure, responsive design work, navigation structure, visual styling, and custom website implementation in this repository are proprietary property of Medios Accesible.
 
-This code is provided only for the approved Elite House Smoke Shop website project and may not be reused, sublicensed, transferred, or distributed without written permission.
+This code is provided only for the approved Elite House Smoke Shop and may not be reused, sublicensed, transferred, or distributed without following buyout clause.
 
 ## Image and Third-Party Asset Notice
 
-Images, product photos, brand logos, trademarks, product names, embedded services, fonts, icons, and any other third-party materials used or referenced in this project remain the property of their respective owners.
+Images, product photos, brand logos, trademarks, product names, embedded services, fonts, icons, and any other materials used or referenced in this project remain the property of elite house smoke shop
 
 Medios Accesible does not claim ownership over third-party images, product branding, trademarks, or external assets unless specifically created by Medios Accesible.
 
