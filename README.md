@@ -16,7 +16,7 @@ This code is provided only for the approved **Elite House Smoke Shop** and may n
 
 ## Image and Third-Party Asset Notice
 
-Images, product photos, brand logos, trademarks, product names, embedded services, fonts, icons, and any other materials used or referenced in this project remain the property of **Elite House Smoke Shop**
+Images, product photos, brand logos, trademarks, product names, Logos, and any other materials used or referenced in this project remain the property of **Elite House Smoke Shop**
 
 **Medios Accesible / James BAndrew Boyde** does not claim ownership over third-party images, product branding, trademarks, or external assets unless specifically created by **Medios Accesible / James Andrew Boyden**.
 
