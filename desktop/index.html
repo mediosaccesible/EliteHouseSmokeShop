@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Elite House Smoke Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="../css/desktop-index.css" />
+
+  <style>
+    /* FULLSCREEN VIDEO INTRO */
+
+    .video-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 4s ease,
+        visibility 4s ease;
+    }
+
+    .video-intro.is-fading {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .video-intro.is-hidden {
+      display: none;
+    }
+
+    .video-intro video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #000;
+    }
+
+    body.intro-playing {
+      overflow: hidden;
+    }
+
+    /* 21+ LEGAL POPUP */
+
+    .age-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 1000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(255, 130, 0, 0.2), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(170, 0, 255, 0.28), transparent 34%),
+        rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(10px);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+
+    .age-gate.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .age-box {
+      position: relative;
+      width: min(520px, 92vw);
+      padding: 42px 38px 36px;
+      border-radius: 22px;
+      text-align: center;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(16, 0, 28, 0.92), rgba(5, 0, 9, 0.96)),
+        rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(0, 255, 255, 0.35);
+      box-shadow:
+        0 0 28px rgba(0, 255, 255, 0.24),
+        0 0 46px rgba(170, 0, 255, 0.26),
+        inset 0 0 28px rgba(255, 255, 255, 0.05);
+    }
+
+    .age-box::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background:
+        radial-gradient(circle at 22% 46%, rgba(0, 255, 255, 0.35), transparent 22%),
+        radial-gradient(circle at 58% 52%, rgba(170, 0, 255, 0.42), transparent 26%),
+        radial-gradient(circle at 82% 38%, rgba(255, 145, 0, 0.28), transparent 24%);
+      filter: blur(14px);
+      opacity: 0.65;
+      animation: ageSmoke 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes ageSmoke {
+      from {
+        transform: translateX(-18px) translateY(10px) scale(1);
+      }
+
+      to {
+        transform: translateX(22px) translateY(-14px) scale(1.06);
+      }
+    }
+
+    .age-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .age-crown {
+      display: block;
+      color: #ff9300;
+      font-size: 54px;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow:
+        0 0 12px rgba(255, 145, 0, 0.82),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .age-content h2 {
+      font-family: "Permanent Marker", cursive;
+      font-size: 44px;
+      line-height: 1;
+      color: #00f6ff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transform: rotate(-2deg);
+      text-shadow:
+        0 0 12px rgba(0, 255, 255, 0.6),
+        0 0 22px rgba(0, 0, 0, 0.5);
+    }
+
+    .age-content p {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .age-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .age-btn {
+      min-width: 130px;
+      height: 48px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .age-btn.yes {
+      color: #fff;
+      border: 1px solid rgba(0, 255, 255, 0.9);
+      background: rgba(0, 255, 255, 0.12);
+      box-shadow:
+        0 0 14px rgba(0, 255, 255, 0.35),
+        inset 0 0 14px rgba(0, 255, 255, 0.12);
+    }
+
+    .age-btn.no {
+      color: #ffc06c;
+      border: 1px solid rgba(255, 145, 0, 0.82);
+      background: rgba(255, 145, 0, 0.1);
+      box-shadow:
+        0 0 14px rgba(255, 145, 0, 0.28),
+        inset 0 0 14px rgba(255, 145, 0, 0.1);
+    }
+
+    .age-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .age-note {
+      display: block;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body class="intro-playing">
+
+  <!-- FULLSCREEN VIDEO INTRO -->
+  <div class="video-intro" id="videoIntro" aria-hidden="true">
+    <video
+      id="introVideo"
+      playsinline
+      preload="auto"
+    >
+      <source
+        src="https://res.cloudinary.com/dovrzmlqj/video/upload/v1777999361/vape-video_cj3qfi.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- 21+ LEGAL POPUP -->
+  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-box">
+      <div class="age-content">
+        <span class="age-crown">♛</span>
+
+        <h2 id="ageTitle">Are you 21?</h2>
+
+        <p>
+          You must be 21 years or older to enter this website.
+          Please confirm your age to continue.
+        </p>
+
+        <div class="age-actions">
+          <button class="age-btn yes" id="ageYes" type="button">Yes</button>
+          <button class="age-btn no" id="ageNo" type="button">No</button>
+        </div>
+
+        <small class="age-note">
+          By clicking YES, you confirm that you are of legal age to view this content.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <main class="site-shell">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-smoke smoke-left"></div>
+      <div class="hero-smoke smoke-bottom"></div>
+
+      <header class="header">
+        <a href="#home" class="logo-wrap">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png"
+            alt="Elite House Smoke Shop Logo"
+            class="logo"
+          />
+        </a>
+
+        <nav class="nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="brands.html">Brands</a>
+  <a href="deals.html">Deals</a>
+  <a href="experience.html">Experience</a>
+  <a href="location.html">Location</a>
+</nav>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+      </header>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="hero-crown">♛</div>
+
+          <p class="hero-kicker">Welcome to</p>
+
+          <h1>
+            <span>Elite</span>
+            <span>House</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Premium vapes.<br>
+            Next level experience.
+          </p>
+
+          <a href="#experience" class="neon-btn">
+            Step Inside
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-tag">
+        <span>Scroll</span>
+        <div></div>
+      </div>
+
+    </section>
+
+    <!-- BRANDS -->
+    <section class="section brands-section" id="brands">
+
+      <div class="section-heading centered">
+        <span class="heading-crown">♛</span>
+        <h2>Brands We Carry</h2>
+        <div class="title-underline purple"></div>
+      </div>
+
+      <div class="brands-row">
+
+        <button class="slider-arrow" aria-label="Previous brand">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="brand-logo geek-logo">Geek Bar</div>
+        <div class="brand-logo raz-logo">RAZ</div>
+        <div class="brand-logo elf-logo">Elf Bar</div>
+        <div class="brand-logo lost-logo">Lost<br>Mary</div>
+        <div class="brand-logo flum-logo">
+          <span>FLUM</span>
+          <small>FLOAT</small>
+        </div>
+        <div class="brand-logo nexa-logo">NEXA</div>
+
+        <button class="slider-arrow" aria-label="Next brand">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+      </div>
+
+      <div class="center-btn">
+        <a href="#" class="neon-btn small">View All Brands</a>
+      </div>
+
+    </section>
+
+    <!-- DEALS -->
+    <section class="section deals-section" id="deals">
+
+      <div class="section-heading centered">
+        <span class="heading-crown">♛</span>
+        <h2>Deals This Week</h2>
+        <div class="title-underline orange"></div>
+      </div>
+
+      <div class="deals-grid">
+
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238200/geekbar-ad_uuxqsz.png"
+            alt="Geek Bar deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+          />
+        </article>
+
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238055/raz-ad_n40a57.png"
+            alt="RAZ deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+          />
+        </article>
+
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777237893/bundle-ad_qxcqcr.png"
+            alt="Bundle deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+          />
+        </article>
+
+      </div>
+
+      <div class="center-btn">
+        <a href="#" class="neon-btn small">See All Deals</a>
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience-section" id="experience">
+
+      <div class="experience-copy">
+        <h2>
+          The Elite<br>
+          Experience
+        </h2>
+
+        <p>
+          More than a smoke shop.<br>
+          It’s a vibe.
+        </p>
+
+        <a href="#" class="neon-btn experience-btn">See Inside</a>
+      </div>
+
+      <button class="gallery-arrow gallery-left" aria-label="Previous photo">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="experience-gallery">
+        <img
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166375/outside_wqh4vb.png"
+          alt="Elite House Smoke Shop exterior"
+        />
+
+        <img
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-1_qwqhxc.png"
+          alt="Elite House Smoke Shop interior photo 1"
+        />
+
+        <img
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-2_hots3k.png"
+          alt="Elite House Smoke Shop interior photo 2"
+        />
+      </div>
+
+      <button class="gallery-arrow gallery-right" aria-label="Next photo">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-v2" id="location">
+
+      <div class="location-v2-bg"></div>
+
+      <div class="location-v2-inner">
+
+        <div class="location-v2-card">
+          <h2>Visítanos</h2>
+          <div class="location-v2-underline"></div>
+
+          <div class="location-v2-info-list">
+
+            <div class="location-v2-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Ave. Roosevelt núm. 350</strong>
+                <span>Unidad 1A, San Juan, PR 00926</span>
+              </div>
+            </div>
+
+            <div class="location-v2-info-item">
+              <i class="fa-regular fa-clock"></i>
+              <div>
+                <strong>Abierto todos los días</strong>
+                <span>10:00 AM - 9:30 PM</span>
+              </div>
+            </div>
+
+            <div class="location-v2-info-item">
+              <i class="fa-brands fa-instagram"></i>
+              <div>
+                <strong>Síguenos</strong>
+                <span>@elitehouse_smokeshop</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="location-v2-map">
+          <iframe
+            title="Elite House Smoke Shop Location"
+            src="https://www.google.com/maps?q=Ave.%20Roosevelt%20num%20350%20unidad%201A%20San%20Juan%2000926&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <div class="footer-logo">
+        <img
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png"
+          alt="Elite House Smoke Shop Logo"
+        />
+      </div>
+
+      <div class="footer-center">
+        <p>Premium products. Real people. Elite service.</p>
+        <small>© 2026 Elite House Smoke Shop. All Rights Reserved. Website by Medios Accesible.</small>
+      </div>
+
+      <div class="footer-vape">
+        <div class="vape-stick"></div>
+        <div class="vape-smoke"></div>
+      </div>
+
+    </footer>
+
+  </main>
+
+  <script>
+    const videoIntro = document.getElementById("videoIntro");
+    const introVideo = document.getElementById("introVideo");
+    const ageGate = document.getElementById("ageGate");
+    const ageYes = document.getElementById("ageYes");
+    const ageNo = document.getElementById("ageNo");
+
+    let fadeStarted = false;
+
+    function fadeOutIntro() {
+      if (fadeStarted) return;
+
+      fadeStarted = true;
+      videoIntro.classList.add("is-fading");
+      document.body.classList.remove("intro-playing");
+
+      setTimeout(() => {
+        videoIntro.classList.add("is-hidden");
+      }, 4200);
+    }
+
+    function checkVideoTime() {
+      if (!introVideo.duration || Number.isNaN(introVideo.duration)) return;
+
+      const timeLeft = introVideo.duration - introVideo.currentTime;
+
+      if (timeLeft <= 4) {
+        fadeOutIntro();
+      }
+    }
+
+    function startIntroVideo() {
+      ageGate.classList.add("is-hidden");
+
+      introVideo.muted = false;
+      introVideo.volume = 1;
+
+      const playPromise = introVideo.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          introVideo.muted = true;
+
+          introVideo.play().catch(() => {
+            fadeOutIntro();
+          });
+        });
+      }
+    }
+
+    function exitSite() {
+      window.location.href = "https://www.google.com";
+    }
+
+    ageYes.addEventListener("click", startIntroVideo);
+    ageNo.addEventListener("click", exitSite);
+
+    introVideo.addEventListener("timeupdate", checkVideoTime);
+    introVideo.addEventListener("ended", fadeOutIntro);
+    introVideo.addEventListener("error", fadeOutIntro);
+
+    window.addEventListener("hashchange", () => {
+      videoIntro.classList.add("is-hidden");
+      ageGate.classList.add("is-hidden");
+      document.body.classList.remove("intro-playing");
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        if (fadeStarted || videoIntro.classList.contains("is-hidden")) {
+          videoIntro.classList.add("is-hidden");
+          ageGate.classList.add("is-hidden");
+          document.body.classList.remove("intro-playing");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
