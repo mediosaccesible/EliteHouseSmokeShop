@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Elite House Smoke Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="../css/mobile-index.css" />
+</head>
+
+<body class="intro-playing">
+
+  <!-- FULLSCREEN VIDEO INTRO -->
+  <div class="video-intro" id="videoIntro" aria-hidden="true">
+    <video id="introVideo" playsinline preload="auto">
+      <source
+        src="https://res.cloudinary.com/dovrzmlqj/video/upload/v1777999361/vape-video_cj3qfi.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- 21+ LEGAL POPUP -->
+  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-box">
+      <div class="age-content">
+        <span class="age-crown">♛</span>
+
+        <h2 id="ageTitle">Are you 21?</h2>
+
+        <p>
+          You must be 21 years or older to enter this website.
+          Please confirm your age to continue.
+        </p>
+
+        <div class="age-actions">
+          <button class="age-btn yes" id="ageYes" type="button">Yes</button>
+          <button class="age-btn no" id="ageNo" type="button">No</button>
+        </div>
+
+        <small class="age-note">
+          By clicking YES, you confirm that you are of legal age to view this content.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- LEFT SLIDE MENU -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-products-bg"></div>
+    <div class="drawer-dark-tint"></div>
+
+    <div class="drawer-content">
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img
+        src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png"
+        alt="Elite House Smoke Shop Logo"
+        class="drawer-logo"
+      />
+
+      <nav class="drawer-nav">
+  <a href="index.html">Home</a>
+  <a href="brands.html">Brands</a>
+  <a href="deals.html">Deals</a>
+  <a href="experience.html">Experience</a>
+  <a href="location.html">Location</a>
+</nav>
+
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/elitehouse_smokeshop" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="site-shell">
+
+    <!-- HERO -->
+    <section class="hero section-scroll" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-smoke smoke-left"></div>
+      <div class="hero-smoke smoke-bottom"></div>
+
+      <header class="header">
+        <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <a href="#home" class="logo-wrap" aria-label="Elite House home">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png"
+            alt="Elite House Smoke Shop Logo"
+            class="logo"
+          />
+        </a>
+      </header>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="hero-crown">♛</div>
+
+          <p class="hero-kicker">Welcome to</p>
+
+          <h1>
+            <span>Elite</span>
+            <span>House</span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="section brands-section section-scroll" id="brands">
+      <div class="section-heading centered">
+        <span class="heading-crown">♛</span>
+        <h2>Brands We Carry</h2>
+        <div class="title-underline purple"></div>
+      </div>
+
+      <div class="mobile-slider-shell">
+        <button class="slider-hint slider-hint-left" aria-label="Swipe left" type="button">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="brands-row mobile-scroll-row">
+          <div class="brand-logo geek-logo">Geek Bar</div>
+          <div class="brand-logo raz-logo">RAZ</div>
+          <div class="brand-logo elf-logo">Elf Bar</div>
+          <div class="brand-logo lost-logo">Lost<br>Mary</div>
+          <div class="brand-logo flum-logo">
+            <span>FLUM</span>
+            <small>FLOAT</small>
+          </div>
+          <div class="brand-logo nexa-logo">NEXA</div>
+        </div>
+
+        <button class="slider-hint slider-hint-right" aria-label="Swipe right" type="button">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="center-btn">
+        <a href="#deals" class="neon-btn small">View Deals</a>
+      </div>
+    </section>
+
+    <!-- DEALS -->
+    <section class="section deals-section section-scroll" id="deals">
+      <div class="section-heading centered">
+        <span class="heading-crown">♛</span>
+        <h2>Deals This Week</h2>
+        <div class="title-underline orange"></div>
+      </div>
+
+      <div class="mobile-slider-shell">
+        <button class="slider-hint slider-hint-left" aria-label="Swipe left" type="button">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="deals-grid mobile-scroll-row">
+          <article class="deal-card image-deal-card">
+            <img
+              src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238200/geekbar-ad_uuxqsz.png"
+              alt="Geek Bar deal at Elite House Smoke Shop"
+              class="deal-ad-image"
+            />
+          </article>
+
+          <article class="deal-card image-deal-card">
+            <img
+              src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238055/raz-ad_n40a57.png"
+              alt="RAZ deal at Elite House Smoke Shop"
+              class="deal-ad-image"
+            />
+          </article>
+
+          <article class="deal-card image-deal-card">
+            <img
+              src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777237893/bundle-ad_qxcqcr.png"
+              alt="Bundle deal at Elite House Smoke Shop"
+              class="deal-ad-image"
+            />
+          </article>
+        </div>
+
+        <button class="slider-hint slider-hint-right" aria-label="Swipe right" type="button">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="center-btn">
+        <a href="#location" class="neon-btn small">Visit Us</a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience-section section-scroll" id="experience">
+      <div class="experience-copy">
+        <h2>
+          The Elite<br>
+          Experience
+        </h2>
+
+        <p>
+          More than a smoke shop.<br>
+          It’s a vibe.
+        </p>
+      </div>
+
+      <div class="mobile-slider-shell experience-slider-shell">
+        <button class="slider-hint slider-hint-left" aria-label="Swipe left" type="button">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="experience-gallery mobile-scroll-row">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166375/outside_wqh4vb.png"
+            alt="Elite House Smoke Shop exterior"
+          />
+
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-1_qwqhxc.png"
+            alt="Elite House Smoke Shop interior photo 1"
+          />
+
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-2_hots3k.png"
+            alt="Elite House Smoke Shop interior photo 2"
+          />
+        </div>
+
+        <button class="slider-hint slider-hint-right" aria-label="Swipe right" type="button">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="center-btn">
+        <a href="#location" class="neon-btn small">Get Directions</a>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-v2 section-scroll" id="location">
+      <div class="location-v2-bg"></div>
+
+      <div class="section-heading centered location-heading">
+        <span class="heading-crown">♛</span>
+        <h2>Location</h2>
+        <div class="title-underline purple"></div>
+      </div>
+
+      <div class="mobile-slider-shell location-slider-shell">
+        <button class="slider-hint slider-hint-left" aria-label="Swipe left" type="button">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="location-v2-inner mobile-scroll-row">
+          <div class="location-v2-card">
+            <h2>Visítanos</h2>
+            <div class="location-v2-underline"></div>
+
+            <div class="location-v2-info-list">
+              <div class="location-v2-info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Ave. Roosevelt núm. 350</strong>
+                  <span>Unidad 1A, San Juan, PR 00926</span>
+                </div>
+              </div>
+
+              <div class="location-v2-info-item">
+                <i class="fa-regular fa-clock"></i>
+                <div>
+                  <strong>Abierto todos los días</strong>
+                  <span>10:00 AM - 9:30 PM</span>
+                </div>
+              </div>
+
+              <div class="location-v2-info-item">
+                <i class="fa-brands fa-instagram"></i>
+                <div>
+                  <strong>Síguenos</strong>
+                  <span>@elitehouse_smokeshop</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-v2-map">
+            <iframe
+              title="Elite House Smoke Shop Location"
+              src="https://www.google.com/maps?q=Ave.%20Roosevelt%20num%20350%20unidad%201A%20San%20Juan%2000926&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <button class="slider-hint slider-hint-right" aria-label="Swipe right" type="button">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <img
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png"
+          alt="Elite House Smoke Shop Logo"
+        />
+      </div>
+
+      <div class="footer-center">
+        <p>Premium products. Real people. Elite service.</p>
+        <small>© 2026 Elite House Smoke Shop. All Rights Reserved. Website by Medios Accesibles.</small>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const videoIntro = document.getElementById("videoIntro");
+    const introVideo = document.getElementById("introVideo");
+    const ageGate = document.getElementById("ageGate");
+    const ageYes = document.getElementById("ageYes");
+    const ageNo = document.getElementById("ageNo");
+
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileDrawer = document.getElementById("mobileDrawer");
+    const drawerClose = document.getElementById("drawerClose");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const drawerLinks = document.querySelectorAll(".drawer-nav a");
+
+    let fadeStarted = false;
+
+    function fadeOutIntro() {
+      if (fadeStarted) return;
+
+      fadeStarted = true;
+      videoIntro.classList.add("is-fading");
+      document.body.classList.remove("intro-playing");
+
+      setTimeout(() => {
+        videoIntro.classList.add("is-hidden");
+      }, 4200);
+    }
+
+    function checkVideoTime() {
+      if (!introVideo.duration || Number.isNaN(introVideo.duration)) return;
+
+      const timeLeft = introVideo.duration - introVideo.currentTime;
+
+      if (timeLeft <= 4) {
+        fadeOutIntro();
+      }
+    }
+
+    function startIntroVideo() {
+      ageGate.classList.add("is-hidden");
+
+      introVideo.muted = false;
+      introVideo.volume = 1;
+
+      const playPromise = introVideo.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          introVideo.muted = true;
+
+          introVideo.play().catch(() => {
+            fadeOutIntro();
+          });
+        });
+      }
+    }
+
+    function exitSite() {
+      window.location.href = "https://www.google.com";
+    }
+
+    function openMenu() {
+      mobileDrawer.classList.add("is-open");
+      menuOverlay.classList.add("is-open");
+      mobileDrawer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("menu-open");
+    }
+
+    function closeMenu() {
+      mobileDrawer.classList.remove("is-open");
+      menuOverlay.classList.remove("is-open");
+      mobileDrawer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    }
+
+    ageYes.addEventListener("click", startIntroVideo);
+    ageNo.addEventListener("click", exitSite);
+
+    introVideo.addEventListener("timeupdate", checkVideoTime);
+    introVideo.addEventListener("ended", fadeOutIntro);
+    introVideo.addEventListener("error", fadeOutIntro);
+
+    hamburgerBtn.addEventListener("click", openMenu);
+    drawerClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+    drawerLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        videoIntro.classList.add("is-hidden");
+        ageGate.classList.add("is-hidden");
+        document.body.classList.remove("intro-playing");
+      });
+    });
+  </script>
+
+</body>
+</html>
