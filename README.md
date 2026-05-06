@@ -1,6 +1,3 @@
-Use this version:
-
-```markdown
 # Elite House Smoke Shop Website
 
 ## Copyright Notice
