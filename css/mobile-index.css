@@ -1427,3 +1427,61 @@ body.menu-open .hamburger-btn {
     left: auto;
   }
 }
+
+/* LOCATION MOBILE FIX: keep visit card and map side-by-side without cutting off */
+.location-v2 .location-slider-shell {
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.location-v2 .location-v2-inner.mobile-scroll-row {
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+  padding: 0 16px 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+  overflow: visible;
+  scroll-snap-type: x mandatory;
+}
+
+.location-v2 .location-v2-inner.mobile-scroll-row > * {
+  flex: 0 0 min(82vw, 360px);
+  width: min(82vw, 360px);
+  max-width: 360px;
+  scroll-snap-align: start;
+}
+
+.location-v2 .location-v2-card,
+.location-v2 .location-v2-map {
+  min-height: 360px;
+}
+
+.location-v2 .location-v2-map {
+  height: 360px;
+}
+
+.location-v2 .slider-hint {
+  display: inline-flex;
+}
+
+@media (max-width: 380px) {
+  .location-v2 .location-v2-inner.mobile-scroll-row > * {
+    flex-basis: 84vw;
+    width: 84vw;
+  }
+
+  .location-v2 .location-v2-card,
+  .location-v2 .location-v2-map {
+    min-height: 330px;
+  }
+
+  .location-v2 .location-v2-map {
+    height: 330px;
+  }
+}
