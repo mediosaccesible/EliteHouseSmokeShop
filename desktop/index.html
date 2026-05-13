@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Elite House Smoke Shop</title>
+  <meta name="description" content="Elite House Smoke Shop in San Juan, Puerto Rico. Visit us for premium vape products, smoke shop accessories, brands, deals, and store location." />
+  <meta property="og:title" content="Elite House Smoke Shop" />
+  <meta property="og:description" content="Premium vape products, smoke shop accessories, brands, deals, and location in San Juan, Puerto Rico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777241822/logo_nervcx.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -228,7 +233,7 @@
     <video
       id="introVideo"
       playsinline
-      preload="auto"
+      preload="metadata"
     >
       <source
         src="https://res.cloudinary.com/dovrzmlqj/video/upload/v1777999361/vape-video_cj3qfi.mp4"
@@ -282,15 +287,15 @@
         </a>
 
         <nav class="nav">
-  <a href="index.html" class="active">Home</a>
-  <a href="brands.html">Brands</a>
-  <a href="deals.html">Deals</a>
-  <a href="experience.html">Experience</a>
-  <a href="location.html">Location</a>
+  <a href="#home" class="active">Home</a>
+  <a href="#brands">Brands</a>
+  <a href="#deals">Deals</a>
+  <a href="#experience">Experience</a>
+  <a href="#location">Location</a>
 </nav>
 
         <div class="socials">
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/elitehouse_smokeshop" aria-label="Instagram" target="_blank" rel="noopener">
             <i class="fa-brands fa-instagram"></i>
           </a>
           <a href="#" aria-label="Facebook">
@@ -339,12 +344,11 @@
       </div>
 
    <div class="brands-row">
-
-  <button class="slider-arrow" aria-label="Previous brand" type="button">
+  <button class="slider-arrow brand-scroll-btn" data-scroll-target="brandsTrack" data-scroll-direction="left" aria-label="Previous brand" type="button">
     <i class="fa-solid fa-chevron-left"></i>
   </button>
 
-  <div class="brands-track">
+  <div class="brands-track" id="brandsTrack" aria-label="Brands we carry">
     <div class="brand-logo crush-logo">Crush<br>Beri</div>
     <div class="brand-logo lost-logo">Lost<br>Mary</div>
     <div class="brand-logo vibrant-logo">Vibrant<br>Prime</div>
@@ -365,10 +369,9 @@
     <div class="brand-logo foger-logo">Foger</div>
   </div>
 
-  <button class="slider-arrow" aria-label="Next brand" type="button">
+  <button class="slider-arrow brand-scroll-btn" data-scroll-target="brandsTrack" data-scroll-direction="right" aria-label="Next brand" type="button">
     <i class="fa-solid fa-chevron-right"></i>
   </button>
-
 </div>
 
        </section>
@@ -387,25 +390,58 @@
 
         <article class="deal-card image-deal-card">
           <img
-            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238200/geekbar-ad_uuxqsz.png"
-            alt="Geek Bar deal at Elite House Smoke Shop"
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688421/Raw-Black-Deal_ch24d6.png"
+            alt="RAW Black deal at Elite House Smoke Shop"
             class="deal-ad-image"
+            loading="lazy"
           />
         </article>
-
         <article class="deal-card image-deal-card">
           <img
-            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777238055/raz-ad_n40a57.png"
-            alt="RAZ deal at Elite House Smoke Shop"
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688413/XXL-Platinum-Veriedad_hlfbjz.png"
+            alt="XXL Platinum variety deal at Elite House Smoke Shop"
             class="deal-ad-image"
+            loading="lazy"
           />
         </article>
-
         <article class="deal-card image-deal-card">
           <img
-            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777237893/bundle-ad_qxcqcr.png"
-            alt="Bundle deal at Elite House Smoke Shop"
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688300/Two-Amigas-Deals_xtnhk1.png"
+            alt="Two Amigas deal at Elite House Smoke Shop"
             class="deal-ad-image"
+            loading="lazy"
+          />
+        </article>
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688283/Mochi-Mushrooms-Deals_smna1h.png"
+            alt="Mochi Mushrooms deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+            loading="lazy"
+          />
+        </article>
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688271/Naked-Ejuices-Deal_pwyjb6.png"
+            alt="Naked E-Juices deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+            loading="lazy"
+          />
+        </article>
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688261/Raw-Boosted-Cones-Deal_f4z1r9.png"
+            alt="RAW Boosted Cones deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+            loading="lazy"
+          />
+        </article>
+        <article class="deal-card image-deal-card">
+          <img
+            src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778688242/Hemper-Bongs-XL-Deal_eznjiw.png"
+            alt="Hemper Bongs XL deal at Elite House Smoke Shop"
+            class="deal-ad-image"
+            loading="lazy"
           />
         </article>
 
@@ -445,12 +481,12 @@
         />
 
         <img
-          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-1_qwqhxc.png"
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778689834/elite_house_raw_wall_enhanced_1499x1049_i82xzl.jpg"
           alt="Elite House Smoke Shop interior photo 1"
         />
 
         <img
-          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1777166379/inside-2_hots3k.png"
+          src="https://res.cloudinary.com/dovrzmlqj/image/upload/v1778689869/elite_house_shelf_wall_enhanced_1499x1049_iqc3z5.jpg"
           alt="Elite House Smoke Shop interior photo 2"
         />
       </div>
@@ -614,6 +650,16 @@
         }
       });
     });
+
+    document.querySelectorAll(".brand-scroll-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.getElementById(button.dataset.scrollTarget);
+        if (!target) return;
+        const direction = button.dataset.scrollDirection === "left" ? -1 : 1;
+        target.scrollBy({ left: direction * Math.round(target.clientWidth * 0.82), behavior: "smooth" });
+      });
+    });
+
   </script>
 
 </body>
