@@ -1487,3 +1487,33 @@ body.menu-open .hamburger-btn {
     height: 330px;
   }
 }
+
+/* LOCATION VISIT PHOTO CLEANUP v8:
+   Use the new visit photo as the card image only, remove duplicate overlay text, and remove circled slider arrows. */
+.location-v2 .location-v2-card {
+  padding: 0;
+  min-height: 360px;
+  background: #050009 url("https://res.cloudinary.com/dovrzmlqj/image/upload/v1778694885/ChatGPT_Image_May_13_2026_01_54_01_PM_mhyiph.png") center center / contain no-repeat;
+}
+
+.location-v2 .location-v2-card::before {
+  display: none;
+}
+
+.location-v2 .location-v2-card h2,
+.location-v2 .location-v2-underline,
+.location-v2 .location-v2-info-list {
+  display: none;
+}
+
+.location-v2 .slider-hint,
+.location-v2 .slider-hint-left,
+.location-v2 .slider-hint-right {
+  display: none !important;
+}
+
+@media (max-width: 380px) {
+  .location-v2 .location-v2-card {
+    min-height: 330px;
+  }
+}
